@@ -17,6 +17,12 @@ $(function() {
         inviter_name = "覃巧云"
     } else if (inviter_a == "suhengliang") {
         inviter_name = "苏恒良"
+    } else if (inviter_a == "lvmingxin") {
+        inviter_name = "吕明鑫"
+    } else if (inviter_a == "xuxinmo") {
+        inviter_name = "许欣默"
+    } else {
+        inviter_name = "无"
     }
     console.log(inviter_name)
         //验证码
@@ -270,7 +276,6 @@ function zeng(entryId, inviter, telval, userval, schoolval) {
         success: function(data) {
             console.log(data)
             if (data.code == 0) {
-                console.log(changeUrl.imgurl + "/nsi-event/2019Vis-activity/purchase_frie.html?name=" + userval + "&company=" + schoolval + "&phone=" + telval + "&id=" + entryId)
                 window.location.href = encodeURI(changeUrl.imgurl + "/nsi-event/2019Vis-activity/purchase_frie.html?name=" + userval + "&company=" + schoolval + "&phone=" + telval + "&id=" + entryId)
             }
         },

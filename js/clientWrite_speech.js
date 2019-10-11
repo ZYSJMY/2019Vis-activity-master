@@ -91,8 +91,6 @@ $(function() {
         })
         var sub = $("#sub")
         sub.on("click", function() {
-            //邮箱
-            var reg = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
             //手机号
             var myreg = /^[1][3,4,5,7,8,6,1,2,9][0-9]{9}$/;
             if ($("input[name=user]").val() == "") {
@@ -118,59 +116,6 @@ $(function() {
                 return false;
             } else {
                 var schoolval = $("input[name=school]").val()
-            }
-            if ($("input[name=position]").val() == "") {
-                $.message({
-                    message: "职位不能为空！",
-                    type: 'warning',
-                    duration: 2000,
-                    showClose: false,
-                    center: false,
-                });
-                return false;
-            } else {
-                var positionval = $("input[name=position]").val()
-            }
-            if ($("input[name=mailbox]").val() == "") {
-                $.message({
-                    message: "邮箱不能为空！",
-                    type: 'warning',
-                    duration: 2000,
-                    showClose: false,
-                    center: false,
-                });
-                return false;
-            } else if (!reg.test($("input[name=mailbox]").val())) {
-                $.message({
-                    message: "邮箱格式不正确，请正确输入!",
-                    type: 'warning',
-                    duration: 2000,
-                    showClose: false,
-                    center: false,
-                });
-                return false;
-            } else {
-                var mailboxval = $("input[name=mailbox]").val()
-            }
-            //单选框
-            if ($('input[type="radio"]:checked').length != 0) {
-                var radio = $("input[name=radio]")
-                var radiovalue = ''; //radiovalue为radio中选中的值
-                for (var i = 0; i < radio.length; i++) {
-                    if (radio[i].checked == true) {
-                        radiovalue = radio[i].value;
-                        break;
-                    }
-                }
-            } else {
-                $.message({
-                    message: "是否公开信息需要选择",
-                    type: 'warning',
-                    duration: 2000,
-                    showClose: false,
-                    center: false,
-                });
-                return false;
             }
             //复选框
             if ($('input[type="checkbox"]:checked').length != 0) {
@@ -239,10 +184,7 @@ $(function() {
                             });
                             return false;
                         } else {
-                            //下拉框
-                            var options = $("#test option:selected");
-                            var optionsval = options.val()
-                            var Data = "name=" + (userval + ("(回馈票)")) + "&company=" + schoolval + "&position=" + positionval + "&mail=" + mailboxval + "&phone=" + telval + "&option01=" + checkboxval + "&ispublic=" + radiovalue + "&attendno=" + optionsval + "&type=赠票"
+                            var Data = "name=" + (userval + ("(嘉宾)")) + "&company=" + schoolval + "&position=0" + "&mail=0" + "&phone=" + telval + "&option01=" + checkboxval + "&ispublic=0" + +"&attendno=1" + "&type=嘉宾"
                             $.ajax({
                                 type: "post",
                                 data: Data,

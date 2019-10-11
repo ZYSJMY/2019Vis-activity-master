@@ -19,12 +19,12 @@ if (phone == null || phone == "") {
         modal.style.display = "block"; //显示弹出层
     } else {
         $(".text_phone span").html("用户手机号：" + localStorage["wechatId"] + "&nbsp;&nbsp;&nbsp;")
-        $(".text_phone a").html("切换账号")
+        $(".text_phone #qiehuan").html("切换账号")
         vis_list(localStorage["wechatId"])
     }
 } else {
     $(".text_phone span").html("用户手机号：" + phone + "&nbsp;&nbsp;&nbsp;")
-    $(".text_phone a").html("切换账号")
+    $(".text_phone #qiehuan").html("切换账号")
     vis_list(phone)
 }
 //切换手机号
@@ -140,26 +140,47 @@ $("#sub").click(function() {
     }
 })
 
-
 //请求数据
 function vis_list(wechatId) {
     $.ajax({
-        type: "POST",
+        type: "get",
         data: {
             "phone": wechatId
         },
         url: changeUrl.address + '/activity/vis_list_byPhone.do',
         success: function(data) {
-            console.log(data)
             if (data.code == 0) {
                 var data = data.data
-                console.log(data)
                 if (data == "") {
                     $(".dingdan").css("display", "block")
                     $(".main").css("display", "none")
                     $(".text_phone span").css("display", "none")
                     $(".text_phone a").css("display", "none")
                 } else {
+                    data.sort(function(a, b) {
+                        return a.entryId - b.entryId
+                    })
+                    var delList = [];
+                    if (data.length > 1) {
+                        for (var i in data) {
+                            var j = i - 1;
+                            if (j == -1) {
+                                j = 0
+                            }
+                            if (data[j].entryId - data[j + 1].entryId == 0) {
+                                if (data[j].totalPrice != 0) {
+                                    delList.push(j)
+                                } else {
+                                    delList.push(j + 1)
+                                }
+                            }
+                        }
+                        // 删除重复
+                        for (var i in delList) {
+                            delete data[delList[i]];
+                        }
+                    }
+                    console.log(data)
                     for (var i in data) {
                         var buyerMessagesplitlist = data[i].ticketType
                         var arr = buyerMessagesplitlist.split("-");
@@ -175,6 +196,7 @@ function vis_list(wechatId) {
                             '<p class="text-muted time"> <span class="time_data' + i + '">时间：</span><span class="border-left"></span>北京昆泰酒店<a href="#"  title="' + data[i].totalPrice + '" class="invoice invoice_hide' + i + '" data-order="' + data[i].orderNo + '" data-phone="' + data[i].phone + '"  style="float:right;text-decoration: underline;">申请发票</a></p>' +
                             '</div>'
                         $(".main_list").append(html)
+
                         if (buyerMessagesplit == "尊享票") {
                             $(".main_span" + i).css("background-color", "#33619d")
                             $(".piao" + i).html("尊享票权益：9 - 10 日全天会议、 茶歇、 午餐、 2019 年报告、 2019 年会刊")
@@ -242,6 +264,9 @@ $(document).on('click', ".invoice", function() {
     })
 
 
+})
+$("#shuaxin").click(function() {
+    location.reload();
 })
 $(".top_img").click(function() {
     window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/index.html"
