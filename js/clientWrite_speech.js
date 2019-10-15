@@ -184,7 +184,7 @@ $(function() {
                             });
                             return false;
                         } else {
-                            var Data = "name=" + (userval + ("(嘉宾)")) + "&company=" + schoolval + "&position=0" + "&mail=0" + "&phone=" + telval + "&option01=" + checkboxval + "&ispublic=0" + +"&attendno=1" + "&type=嘉宾"
+                            var Data = "name=" + (userval + ("(嘉宾)")) + "&company=" + schoolval + "&position=0" + "&mail=0" + "&phone=" + telval + "&option01=" + checkboxval + "&ispublic=0" + "&attendno=1" + "&type=嘉宾"
                             $.ajax({
                                 type: "post",
                                 data: Data,
