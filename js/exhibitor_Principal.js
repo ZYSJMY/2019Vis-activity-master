@@ -1,0 +1,60 @@
+$(document).on("click", ".content_main", function() {
+    var id = $(this).find(".right_text").data("id")
+    window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/details_Principal.html?id=" + id
+})
+
+$.ajax({
+    type: "get",
+    data: { type: "校长", pageNum: "1", pageSize: 20 },
+    url: changeUrl.address + "/manager/exhibitor/list.do",
+    success: function(res) {
+        var data = res.data.list
+        for (var i in data) {
+            var html =
+                '<div class="content_main">' +
+                '<div class="left_img" >' +
+                '<img class="img_one" src = "' + data[i].logoIcon + '"/>' +
+                '</div> ' +
+                '<div class = "right_text" data-id="' + data[i].id + '" >' +
+                '<div class="fot">' +
+                '<span class="exhibitorName">' + data[i].exhibitorName + '</span><span class="boothNum">得票：' + data[i].thumbValue + '</span>' +
+                '</div> ' +
+                '<div class="bot">' +
+                '<span class="intro" >' + data[i].intro + '</span>' +
+                '</div>' +
+                '</div> ' +
+                '</div>'
+            $(".main").append(html)
+        }
+        $(".main .content_main").eq(0).find(".left_img").append('<img class="img_two" src="./images/jin.png"/>')
+        $(".main .content_main").eq(1).find(".left_img").append('<img class="img_two" src="./images/yin.png"/>')
+        $(".main .content_main").eq(2).find(".left_img").append('<img class="img_two" src="./images/tong.png"/>')
+    }
+})
+
+//学校
+$(".school").click(function() {
+    window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_School.html"
+
+})
+
+//校长
+$(".principal").click(function() {
+    location.reload();
+})
+
+//服务商
+$(".mechanism").click(function() {
+    window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_mechanism.html"
+})
+
+$(".top_img,.tiaozhuan").click(function() {
+    window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/index.html"
+})
+$(function() {
+    var html = document.getElementsByTagName('html')[0];
+    //屏幕的宽度（兼容处理）
+    var w = $(window).width();
+    //750这个数字是根据你的设计图的实际大小来的，所以值具体根据设计图的大小
+    html.style.fontSize = w / 3.75 + "px";
+})

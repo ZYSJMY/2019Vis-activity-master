@@ -1,0 +1,219 @@
+body {
+    background-color: #eee;
+}
+
+.top {
+    background-color: #fff;
+    width: 100%;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    text-align: center;
+    font-size: 0.18rem;
+    color: #000;
+    margin-bottom: 0.05rem;
+}
+
+.main {
+    margin-bottom: 25px
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.content {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.content .content_main:last-child {
+    border-bottom: none
+}
+
+.content .content_main {
+    background-color: #FFF;
+    display: flex;
+    width: 100%;
+    height: 1.20rem;
+    padding: 0.1rem;
+    border-bottom: 1px solid #f8f3f3;
+    cursor: pointer;
+    position: relative;
+}
+
+.content .content_main .left_img {
+    flex: 0 0 1rem;
+    height: 1rem;
+    overflow: hidden;
+    margin-right: 0.1rem;
+}
+
+.content .content_main .right_text {
+    flex: 1;
+    height: 1rem;
+}
+
+.content .content_main .left_img .img_one {
+    width: 1rem;
+    height: 1rem;
+}
+
+.content .content_main .left_img .img_two {
+    position: absolute;
+    top: 0;
+    left: -0.02rem;
+    width: 0.28rem;
+    height: 0.28rem;
+}
+
+.content .content_main .right_text .fot .exhibitorName {
+    width: 1.6rem;
+    font-weight: 700;
+    font-size: 0.16rem;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.content .content_main .right_text .boothNum {
+    float: right;
+    color: #797979;
+    font-size: 0.12rem;
+}
+
+.content .content_main .right_text .bot {
+    width: 100%;
+    height: 0.7rem;
+}
+
+.content .content_main .right_text .intro {
+    width: 99%;
+    font-size: 0.14rem;
+    color: rgba(13, 14, 16, 0.8);
+    margin-right: 1%;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.foot {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.14rem;
+    color: rgba(13, 14, 16, 0.8);
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, .4);
+}
+
+.foot p {
+    width: 25%;
+    height: 0.4rem;
+    border-right: 1px solid #b6b6b6;
+}
+
+.foot p:last-child {
+    border: none;
+}
+
+.top_img {
+    position: absolute;
+    margin: 0.06rem 0 0 0.2rem;
+    border-radius: 50%;
+    color: #fff;
+    width: 0.3rem;
+    height: 0.3rem;
+    text-align: center;
+    line-height: 0.3rem;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 99;
+}
+
+.top_img img {
+    position: relative;
+    width: 0.2rem;
+    height: 0.18rem;
+    left: -2px;
+    top: -1px;
+}
+
+.active {
+    background-color: red;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .content {
+        width: 738px;
+    }
+    .top {
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .content .content_main {
+        height: 120px;
+        padding: 10px;
+    }
+    .content .content_main .left_img {
+        flex: 0 0 100px;
+        height: 100px;
+        margin-right: 10px;
+    }
+    .content .content_main .left_img .img_one {
+        width: 100px;
+        height: 100px;
+    }
+    .content .content_main .left_img .img_two {
+        left: 0;
+        width: 30px;
+        height: 30px;
+    }
+    .content .content_main .right_text .fot .exhibitorName {
+        width: 260px;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    .content .content_main .right_text .boothNum {
+        font-size: 12px;
+    }
+    .content .content_main .right_text .bot {
+        width: 100%;
+        height: 70px;
+    }
+    .content .content_main .right_text .intro {
+        font-size: 14px;
+    }
+    .foot {
+        width: 738px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+    }
+    .top_img {
+        margin: 6px 0 0 2px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .top_img img {
+        width: 20px;
+        height: 18px;
+    }
+}

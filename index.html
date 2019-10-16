@@ -72,6 +72,25 @@
             display: block;
         }
         
+        #exhibition {
+            display: none;
+            position: fixed;
+            font-size: 16px;
+            color: #fff;
+            bottom: 100px;
+            right: 0;
+            width: 80px;
+            height: 30px;
+            padding: 0 5px;
+            background-color: #00BCD4;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 2px solid #000;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            box-shadow: -2px 2px 4px #797777;
+        }
+        
         @media (min-width: 760px) {
             #but1,
             #but2 {
@@ -168,6 +187,9 @@
         <button id="but1" type="button" class="btn btn-danger btn-lg col-xs-6 col-sm-3 col-md-2 col-lg-1">立即报名</button>
         <button id="but2" type="button" class="btn btn-warning btn-lg col-xs-6 col-sm-3 col-md-2 col-lg-1">我的门票</button>
     </div>
+    <div id="exhibition">
+        <p> 展商信息</p>
+    </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous "></script>
@@ -197,6 +219,9 @@
     })
     $("#but2").click(function() {
         window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/personal.html"
+    })
+    $("#exhibition").click(function() {
+        window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_School.html"
     })
     $(document).ready(function() {
         if (document.body.clientWidth < 760) {

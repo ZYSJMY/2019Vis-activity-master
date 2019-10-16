@@ -1,0 +1,276 @@
+body {
+    background-color: #eee;
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.content {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.top {
+    background-color: #fff;
+    width: 100%;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    text-align: center;
+    font-size: 0.18rem;
+    color: #000;
+    margin-bottom: 0.05rem;
+}
+
+.dianji {
+    display: flex;
+    width: 100%;
+    height: 0.6rem;
+    background-color: #fff;
+    margin-bottom: 0.05rem;
+    padding: 0.1rem;
+}
+
+.zanshang {
+    width: 70%;
+    font-size: 0.16rem;
+    line-height: 0.4rem;
+    margin-right: 6%;
+}
+
+.dianji .upbutton {
+    width: 24%;
+    height: 0.4rem;
+    margin: 0;
+    color: #FF8761;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 0.2rem;
+    cursor: pointer
+}
+
+.dianji p .zan {
+    font-size: 0.22rem;
+}
+
+.glyphicon {
+    top: 0.05rem
+}
+
+.dianji p .zan_num {
+    font-size: 0.16rem;
+    color: #FF8761;
+    line-height: 0.36rem;
+}
+
+.foot {
+    width: 100%;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    text-align: center;
+    font-size: 0.16rem;
+    color: #888;
+    margin-top: 0.1rem;
+}
+
+.content .jieshao {
+    background-color: #FFF;
+    padding: 0.1rem;
+}
+
+.content .content_main {
+    background-color: #FFF;
+    display: flex;
+    width: 100%;
+    height: 1.20rem;
+    padding: 0.1rem;
+}
+
+.content .content_main:last-child {
+    border-bottom: none
+}
+
+.content .content_main .left_img {
+    flex: 0 0 1rem;
+    height: 1rem;
+    overflow: hidden;
+    margin-right: 0.1rem
+}
+
+.content .content_main .left_img img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.content .content_main .right_text {
+    flex: 1;
+    position: relative;
+}
+
+.content .content_main .right_text .bot {
+    position: absolute;
+    width: 100%;
+    height: 0.7rem;
+}
+
+.content .content_main .right_text .fot .exhibitorName {
+    width: 1.2rem;
+    font-weight: 700;
+    font-size: 0.18rem;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.content .content_main .right_text .boothNum {
+    float: right;
+    color: #797979;
+    font-size: 0.12rem;
+}
+
+.content .content_main .right_text .intro {
+    width: 99%;
+    font-size: 0.14rem;
+    color: rgba(13, 14, 16, 0.8);
+    margin-right: 1%;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.w-e-toolbar {
+    display: none !important;
+}
+
+.w-e-text-container {
+    border: none !important;
+    height: 100% !important;
+    z-index: 1 !important;
+}
+
+.w-e-text {
+    padding: 0 !important;
+    overflow: auto !important;
+}
+
+.w-e-text p {
+    margin: 0 !important;
+    font-size: 0.16rem !important;
+    margin: 0.05rem 0 !important;
+}
+
+.top_img {
+    position: absolute;
+    margin: 0.06rem 0 0 0.2rem;
+    border-radius: 50%;
+    color: #fff;
+    width: 0.3rem;
+    height: 0.3rem;
+    text-align: center;
+    line-height: 0.3rem;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 99;
+}
+
+.top_img img {
+    position: relative;
+    width: 0.2rem;
+    height: 0.18rem;
+    left: -2px;
+    top: -1px;
+}
+
+@media (min-width: 768px) {
+    .content {
+        width: 738px;
+    }
+    .top {
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .dianji {
+        height: 60px;
+        margin-bottom: 5px;
+        padding: 10px;
+    }
+    .zanshang {
+        font-size: 18px;
+        line-height: 40px;
+    }
+    .dianji .upbutton {
+        height: 40px;
+        border-radius: 20px;
+    }
+    .dianji p .zan {
+        font-size: 22px;
+    }
+    .glyphicon {
+        top: 5px
+    }
+    .dianji p .zan_num {
+        font-size: 18px;
+        line-height: 36px
+    }
+    .foot {
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .content .jieshao {
+        padding: 10px
+    }
+    .content .content_main {
+        height: 120px;
+        padding: 10px
+    }
+    .content .content_main .left_img {
+        flex: 0 0 100px;
+        height: 100px;
+        margin-right: 10px
+    }
+    .content .content_main .left_img img {
+        width: 100px;
+        height: 100px;
+    }
+    .content .content_main .right_text .bot {
+        height: 70px
+    }
+    .content .content_main .right_text .fot .exhibitorName {
+        width: 260px;
+        font-size: 18px;
+    }
+    .content .content_main .right_text .boothNum {
+        font-size: 12px;
+    }
+    .content .content_main .right_text .intro {
+        font-size: 14px;
+    }
+    .w-e-text p {
+        font-size: 16px !important;
+        margin: 5px 0 !important;
+    }
+    .top_img {
+        margin: 6px 0 0 2px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .top_img img {
+        width: 20px;
+        height: 18px;
+    }
+}
