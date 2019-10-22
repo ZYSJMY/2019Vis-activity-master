@@ -16,10 +16,11 @@
                     '</div> ' +
                     '<div class = "right_text" data-id="' + data[i].id + '" >' +
                     '<div class="fot">' +
-                    '<span class="exhibitorName">' + data[i].exhibitorName + '</span><span class="boothNum">得票：' + data[i].thumbValue + '</span>' +
+                    '<span class="exhibitorName">' + data[i].exhibitorName + '</span>' +
                     '</div> ' +
                     '<div class="bot">' +
                     '<span class="intro" >' + data[i].intro + '</span>' +
+                    '<span class="boothNum">得票：' + data[i].thumbValue + '</span>' +
                     '</div>' +
                     '</div> ' +
                     '</div>'

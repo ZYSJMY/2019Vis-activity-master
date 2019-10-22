@@ -18,7 +18,7 @@ function getQueryString(name) {
 var id = getQueryString("id")
 var E = window.wangEditor
 var editor = new E('.jieshao')
-var thumbValue
+var thumbValue //点赞数
 
 //ios 去掉alert url
 window.alert = function(name) {
@@ -79,6 +79,8 @@ $(".top_img").click(function() {
     window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_School.html"
 })
 
+
+
 function loading2() {
     $("body").fadeIn(2000)
     $('body').loading({
@@ -112,6 +114,7 @@ function loading2() {
             setTimeout(function() {
                 removeLoading('test');
             }, 1500)
+            weixinShare('为' + res.data.exhibitorName + '打Call ! 首届“新锐国际学校评选”活动征集大众投票', '为你心仪的学校赢得荣誉，送它上第五届VIS大会（11月8-10日）颁奖礼现场', 'http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg')
         }
     })
 }
