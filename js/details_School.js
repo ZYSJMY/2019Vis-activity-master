@@ -50,7 +50,7 @@ $(document).on("click", ".upbutton", function() {
             url: changeUrl.address + "/CommonApi/thumb_up.do",
             success: function(res) {
                 if (res.code == 0) {
-                    $(".dianji .upbutton").find(".zan_num").html(thumbValue) // 赞数
+                    $(".dianji .upbutton").find(".zan_num").html(thumbValue >= 10000 ? String((thumbValue / 10000).substring(0, String(thumbValue / 10000).length - 3) + " 万") : thumbValue) // 赞数
                 } else {
                     alert("投票人数过多，请刷新本页重新投票！！！")
                 }
@@ -107,9 +107,15 @@ function loading2() {
             editor.txt.html(res.data.textDesc)
             editor.$textElem.attr('contenteditable', false)
             thumbValue = res.data.thumbValue
+            if (res.data.thumbValue >= 10000) {
+                thum_Num = String(res.data.thumbValue / 10000)
+                thumbValueNum = thum_Num.substring(0, thum_Num.length - 3) + " 万"
+            } else {
+                thumbValueNum = res.data.thumbValue
+            }
             $(".content_main").find(".left_img img").attr('src', res.data.logoIcon) // logo
             $(".content_main").find(".right_text .exhibitorName").html(res.data.exhibitorName) // 公司名称
-            $(".dianji").find(".zan_num").html(res.data.thumbValue >= 10000 ? (parseInt(res.data.thumbValue / 10000) + "万") : res.data.thumbValue) // 赞数
+            $(".dianji").find(".zan_num").html(thumbValueNum) // 赞数
             $(".intro").html(res.data.intro)
             setTimeout(function() {
                 removeLoading('test');
