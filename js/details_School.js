@@ -30,50 +30,9 @@ window.alert = function(name) {
     iframe.parentNode.removeChild(iframe);
 }
 
-var dateNow = new Date().getDate();
 $(document).on("click", ".upbutton", function() {
-    dateSave = new Date().getDate();
-    // 第一天点击
-    if (!localStorage.dateNow) {
-        localStorage.setItem("dateNow", dateNow)
-            // 第二天
-    } else if (localStorage.dateNow != dateSave) {
-        localStorage.setItem("School", "0")
-        localStorage.setItem("dateNow", dateSave)
-    }
-    if (School()) {
-        alert("投票成功")
-        thumbValue++ // 赞数++
-        $.ajax({
-            type: "get",
-            data: { exhibitorId: id },
-            url: changeUrl.address + "/CommonApi/thumb_up.do",
-            success: function(res) {
-                if (res.code == 0) {
-                    $(".dianji .upbutton").find(".zan_num").html(thumbValue >= 10000 ? String((thumbValue / 10000).substring(0, String(thumbValue / 10000).length - 3) + " 万") : thumbValue) // 赞数
-                } else {
-                    alert("投票人数过多，请刷新本页重新投票！！！")
-                }
-            }
-        })
-    } else {
-        alert("每天只能投五票，请您明天再来！")
-    }
+    alert("投票已结束")
 })
-
-function School() {
-    if (!localStorage.School) {
-        localStorage.setItem("School", "0")
-    }
-    localStorage.School++
-        console.log(localStorage.School)
-    if (localStorage.School > 5) {
-        localStorage.setItem("School", "5")
-        return false
-    } else {
-        return true
-    }
-}
 
 $(".top_img").click(function() {
     window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_School.html"
@@ -110,12 +69,13 @@ function loading2() {
             if (res.data.thumbValue >= 10000) {
                 thum_Num = String(res.data.thumbValue / 10000)
                 thumbValueNum = thum_Num.substring(0, thum_Num.length - 3) + " 万"
+                $(".dianji").find(".zan_num").html(thumbValueNum) // 赞数
             } else {
                 thumbValueNum = res.data.thumbValue
+                $(".dianji").find(".zan_num").html(thumbValueNum) // 赞数
             }
             $(".content_main").find(".left_img img").attr('src', res.data.logoIcon) // logo
             $(".content_main").find(".right_text .exhibitorName").html(res.data.exhibitorName) // 公司名称
-            $(".dianji").find(".zan_num").html(thumbValueNum) // 赞数
             $(".intro").html(res.data.intro)
             setTimeout(function() {
                 removeLoading('test');

@@ -29,6 +29,13 @@
             $(".main .content_main").eq(0).find(".left_img").append('<img class="img_two" src="./images/jin.png"/>')
             $(".main .content_main").eq(1).find(".left_img").append('<img class="img_two" src="./images/yin.png"/>')
             $(".main .content_main").eq(2).find(".left_img").append('<img class="img_two" src="./images/tong.png"/>')
+            $(".main .content_main").eq(3).find(".left_img").append('<img class="img_two" src="./images/4.png"/>')
+            $(".main .content_main").eq(4).find(".left_img").append('<img class="img_two" src="./images/5.png"/>')
+            $(".main .content_main").eq(5).find(".left_img").append('<img class="img_two" src="./images/6.png"/>')
+            $(".main .content_main").eq(6).find(".left_img").append('<img class="img_two" src="./images/7.png"/>')
+            $(".main .content_main").eq(7).find(".left_img").append('<img class="img_two" src="./images/8.png"/>')
+            $(".main .content_main").eq(8).find(".left_img").append('<img class="img_two" src="./images/9.png"/>')
+            $(".main .content_main").eq(9).find(".left_img").append('<img class="img_two" src="./images/10.png"/>')
         }
     })
 

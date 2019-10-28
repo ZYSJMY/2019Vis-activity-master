@@ -57,8 +57,7 @@ $(".school").click(function() {
 
 //校长
 $(".principal").click(function() {
-    alert("最具影响力校长评选 暂未开始")
-        // window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_Principal.html"
+    window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_Principal.html"
 })
 
 //服务商

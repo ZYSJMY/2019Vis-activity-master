@@ -50,7 +50,14 @@ $(document).on("click", ".upbutton", function() {
             url: changeUrl.address + "/CommonApi/thumb_up.do",
             success: function(res) {
                 if (res.code == 0) {
-                    $(".dianji .upbutton").find(".zan_num").html(thumbValue) // 赞数
+                    if (thumbValue >= 10000) {
+                        thum_ = String(thumbValue / 10000)
+                        thumb_Num = thum_.substring(0, thum_.length - 3) + " 万"
+                        $(".dianji").find(".zan_num").html(thumb_Num) // 赞数
+                    } else {
+                        thumb_Num = thumbValue
+                        $(".dianji").find(".zan_num").html(thumb_Num) // 赞数
+                    }
                 } else {
                     alert("投票人数过多，请刷新本页重新投票！！！")
                 }
@@ -104,9 +111,17 @@ function loading2() {
             editor.txt.html(res.data.textDesc)
             editor.$textElem.attr('contenteditable', false)
             thumbValue = res.data.thumbValue
+            if (res.data.thumbValue >= 10000) {
+                thum_Num = String(res.data.thumbValue / 10000)
+                thumbValueNum = thum_Num.substring(0, thum_Num.length - 3) + " 万"
+                $(".dianji").find(".zan_num").html(thumbValueNum) // 赞数
+            } else {
+                thumbValueNum = res.data.thumbValue
+                $(".dianji").find(".zan_num").html(thumbValueNum) // 赞数
+            }
             $(".content_main").find(".left_img img").attr('src', res.data.logoIcon) // logo
             $(".content_main").find(".right_text .exhibitorName").html(res.data.exhibitorName) // 公司名称
-            $(".dianji").find(".zan_num").html(res.data.thumbValue >= 10000 ? (parseInt(res.data.thumbValue / 10000) + "万") : res.data.thumbValue) // 赞数 
+                // $(".dianji").find(".zan_num").html(res.data.thumbValue >= 10000 ? (parseInt(res.data.thumbValue / 10000) + "万") : res.data.thumbValue) // 赞数 
             $(".content_main").find(".right_text .boothNum").html("展位号：" + res.data.boothNum) // 展位
             $(".intro").html(res.data.intro)
             setTimeout(function() {

@@ -3,6 +3,16 @@ $(document).on("click", ".content_main", function() {
     window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/details_Principal.html?id=" + id
 })
 
+//ios 去掉alert url
+window.alert = function(name) {
+    var iframe = document.createElement("IFRAME");
+    iframe.style.display = "none";
+    iframe.setAttribute("src", 'data:text/plain,');
+    document.documentElement.appendChild(iframe);
+    window.frames[0].window.alert(name);
+    iframe.parentNode.removeChild(iframe);
+}
+
 $.ajax({
     type: "get",
     data: { type: "校长", pageNum: "1", pageSize: 20 },
@@ -30,6 +40,13 @@ $.ajax({
         $(".main .content_main").eq(0).find(".left_img").append('<img class="img_two" src="./images/jin.png"/>')
         $(".main .content_main").eq(1).find(".left_img").append('<img class="img_two" src="./images/yin.png"/>')
         $(".main .content_main").eq(2).find(".left_img").append('<img class="img_two" src="./images/tong.png"/>')
+        $(".main .content_main").eq(3).find(".left_img").append('<img class="img_two" src="./images/4.png"/>')
+        $(".main .content_main").eq(4).find(".left_img").append('<img class="img_two" src="./images/5.png"/>')
+        $(".main .content_main").eq(5).find(".left_img").append('<img class="img_two" src="./images/6.png"/>')
+        $(".main .content_main").eq(6).find(".left_img").append('<img class="img_two" src="./images/7.png"/>')
+        $(".main .content_main").eq(7).find(".left_img").append('<img class="img_two" src="./images/8.png"/>')
+        $(".main .content_main").eq(8).find(".left_img").append('<img class="img_two" src="./images/9.png"/>')
+        $(".main .content_main").eq(9).find(".left_img").append('<img class="img_two" src="./images/10.png"/>')
     }
 })
 
@@ -46,7 +63,7 @@ $(".principal").click(function() {
 
 //服务商
 $(".mechanism").click(function() {
-    window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_mechanism.html"
+    alert("十强供应商评选 暂未开始")
 })
 
 $(".top_img,.tiaozhuan").click(function() {
