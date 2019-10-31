@@ -29,58 +29,9 @@ window.alert = function(name) {
     window.frames[0].window.alert(name);
     iframe.parentNode.removeChild(iframe);
 }
-
-var dateNow = new Date().getDate();
 $(document).on("click", ".upbutton", function() {
-    dateSave = new Date().getDate();
-    // 第一天点击
-    if (!localStorage.dateNow) {
-        localStorage.setItem("dateNow", dateNow)
-            // 第二天
-    } else if (localStorage.dateNow != dateSave) {
-        localStorage.setItem("Principal", "0")
-        localStorage.setItem("dateNow", dateSave)
-    }
-    if (Principal()) {
-        alert("投票成功")
-        thumbValue++ // 赞数++
-        $.ajax({
-            type: "POST",
-            data: { exhibitorId: id },
-            url: changeUrl.address + "/CommonApi/thumb_up.do",
-            success: function(res) {
-                if (res.code == 0) {
-                    if (thumbValue >= 10000) {
-                        thum_ = String(thumbValue / 10000)
-                        thumb_Num = thum_.substring(0, thum_.length - 3) + " 万"
-                        $(".dianji").find(".zan_num").html(thumb_Num) // 赞数
-                    } else {
-                        thumb_Num = thumbValue
-                        $(".dianji").find(".zan_num").html(thumb_Num) // 赞数
-                    }
-                } else {
-                    alert("投票人数过多，请刷新本页重新投票！！！")
-                }
-            }
-        })
-    } else {
-        alert("每天只能投五票，请您明天再来！")
-    }
+    alert("投票已结束")
 })
-
-function Principal() {
-    if (!localStorage.Principal) {
-        localStorage.setItem("Principal", "0")
-    }
-    localStorage.Principal++
-
-        if (localStorage.Principal > 5) {
-            localStorage.setItem("Principal", "5")
-            return false
-        } else {
-            return true
-        }
-}
 
 $(".top_img").click(function() {
     window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_Principal.html"

@@ -15,7 +15,10 @@
 <body>
     <div class="container-fluid">
         <div class="content container">
-            <div class="top_img">
+            <div class="top">
+                投票活动已结束
+            </div>
+            <!-- <div class="top_img">
                 <img src="./images/fh.svg" alt="">
             </div>
             <div class="top">
@@ -29,7 +32,7 @@
                 <p class="school active">学校评选</p>
                 <p class="principal">校长评选</p>
                 <p class="mechanism">服务商评选</p>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
@@ -37,10 +40,19 @@
 </html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous "></script>
-<script src="./js/config.js"></script>
+<script>
+    $(function() {
+        var html = document.getElementsByTagName('html')[0];
+        //屏幕的宽度（兼容处理）
+        var w = $(window).width();
+        //750这个数字是根据你的设计图的实际大小来的，所以值具体根据设计图的大小
+        html.style.fontSize = w / 3.75 + "px";
+    })
+</script>
+<!-- <script src="./js/config.js"></script>
 <script src="./js/exhibitor_School.js"></script>
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script src="js/wexinShare01.js"></script>
 <script>
     weixinShare('为心仪的学校打Call！首届“新锐国际学校评选”活动开启大众投票通道，邀你参与', '为你心仪的学校赢得荣誉，送它上第五届VIS大会（11月8-10日）颁奖礼现场', 'http://data.xinxueshuo.cn/upImage/upInstitutionImg/100062/100062-logo.jpg')
-</script>
+</script> -->

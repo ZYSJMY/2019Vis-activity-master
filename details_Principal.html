@@ -29,7 +29,6 @@
                 <div class="right_text">
                     <div class="fot">
                         <span style="width: 2rem;" class="exhibitorName"></span>
-                        <!-- <span class="boothNum"></span> -->
                     </div>
                     <div class="bot">
                         <span class="intro"></span>
@@ -37,10 +36,10 @@
                 </div>
             </div>
             <div class="dianji">
-                <span class="zanshang">投票截止日期:10月31号<br> 每人每天可投五票</span>
-                <p class="upbutton">
+                <span style="line-height: 0.5rem;font-size: 0.16rem" class="zanshang">活动投票已结束</span>
+                <p style="background-color: #eee;color: #b1b1b1;" class="upbutton">
                     <span class="zan glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-                    <span class="zan_num"></span>
+                    <span style="color: #b1b1b1;" class="zan_num"></span>
                 </p>
             </div>
             <div class="jieshao">
@@ -71,7 +70,9 @@
         //h5
     } else {
         //pc
-        $(".zanshang").html("投票截止日期:10月31号  ·  每人每天可投五票")
+        $(".zanshang").html("活动投票已结束")
+        $(".zanshang").css("font-size", "18px")
+        $(".zanshang").css("line-height", "40px")
     }
     //百度统计
     var _hmt = _hmt || [];
