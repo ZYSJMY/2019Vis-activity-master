@@ -29,7 +29,7 @@ window.alert = function(name) {
     window.frames[0].window.alert(name);
     iframe.parentNode.removeChild(iframe);
 }
-
+var token;
 var dateNow = new Date().getDate();
 $(document).on("click", ".upbutton", function() {
     dateSave = new Date().getDate();
@@ -45,9 +45,9 @@ $(document).on("click", ".upbutton", function() {
         alert("投票成功")
         thumbValue++ // 赞数++
         $.ajax({
-            type: "get",
-            data: { exhibitorId: id },
-            url: changeUrl.address + "/CommonApi/thumb_up.do",
+            type: "POST",
+            data: { exhibitorId: id, token: token },
+            url: changeUrl.address + "/CommonApi/thumb_up_exhibition_token.do",
             success: function(res) {
                 if (res.code == 0) {
                     if (thumbValue >= 10000) {
