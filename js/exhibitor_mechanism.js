@@ -2,6 +2,17 @@
         var id = $(this).find(".right_text").data("id")
         window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/details_mechanism.html?id=" + id
     })
+
+    //ios 去掉alert url
+    window.alert = function(name) {
+        var iframe = document.createElement("IFRAME");
+        iframe.style.display = "none";
+        iframe.setAttribute("src", 'data:text/plain,');
+        document.documentElement.appendChild(iframe);
+        window.frames[0].window.alert(name);
+        iframe.parentNode.removeChild(iframe);
+    }
+
     $.ajax({
         type: "get",
         data: { type: "机构", pageNum: "1", pageSize: 30 },
@@ -41,12 +52,14 @@
 
     //学校
     $(".school").click(function() {
-        window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_School.html"
+        alert("活动已结束")
+            // window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_School.html"
     })
 
     //校长
     $(".principal").click(function() {
-        window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_Principal.html"
+        alert("活动已结束")
+            // window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/exhibitor_Principal.html"
     })
 
     //服务商

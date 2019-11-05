@@ -10,145 +10,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_551799_eo58xwv2o4siqkt9.css">
     <style>
-        h1 {
-            display: none;
-        }
-        
-        .row {
-            margin: 0 0 20px;
-            position: relative;
-        }
-        
-        .row p {
-            display: none;
+        body {
+            background-color: #eee;
         }
         
         .container-fluid {
             padding: 0;
+            margin: 0;
+            overflow: hidden;
         }
         
-        .container-fluid img {
+        .H5img img {
             width: 100%;
             height: auto;
         }
         
-        #but1,
-        #but2 {
-            position: fixed;
-            bottom: 0;
-            border-radius: 0;
-            margin-right: 0;
-        }
-        
-        #but1 {
-            left: 0;
-        }
-        
-        #but2 {
-            right: 0;
-        }
-        
-        .top_text {
-            position: fixed;
-            z-index: 1;
-            right: 20px;
-            top: 20px;
-            width: 80px;
-            height: 40px;
-            border-radius: 10%;
-            text-align: center;
-            line-height: 40px;
+        .top_img {
+            position: absolute;
+            margin: 6px 0 0 16px;
+            border-radius: 50%;
             color: #fff;
-            font-size: 16px
-        }
-        
-        .pcimg,
-        .Englishpcimg,
-        .EnglishH5img {
-            display: none;
-        }
-        
-        .H5img {
-            display: block;
-        }
-        
-        #exhibition {
-            display: none;
-            position: fixed;
-            font-size: 16px;
-            color: #fff;
-            bottom: 100px;
-            right: 0;
-            width: 80px;
+            width: 30px;
             height: 30px;
-            padding: 0 5px;
-            background-color: #00BCD4;
-            line-height: 30px;
             text-align: center;
-            border-radius: 2px solid #000;
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-            box-shadow: -2px 2px 4px #797777;
+            line-height: 30px;
+            background-color: rgba(0, 0, 0, .5);
+            z-index: 99;
         }
         
-        @media (min-width: 760px) {
-            #but1,
-            #but2 {
-                position: static;
-                border-radius: 30px;
-                margin-top: 17px;
-            }
-            #but1 {
-                margin-right: 40px;
-            }
-            .row {
-                margin: 0;
-                padding: 0 80px;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-                height: 80px;
-                background-color: #08477e;
-            }
-            .row p {
-                display: block;
-                font-size: 2.3rem;
-                line-height: 80px;
-                text-align: center;
-                letter-spacing: 2px;
-                color: #fff;
-            }
-            .H5img,
-            .EnglishH5img,
-            .Englishpcimg {
-                display: none;
-            }
-            .pcimg {
-                display: block;
-            }
-            .top_text {
-                position: fixed;
-                z-index: 1;
-                right: 25px;
-                top: 25px;
-                width: 100px;
-                height: 50px;
-                border-radius: 10%;
-                text-align: center;
-                line-height: 50px;
-                color: #fff;
-                font-size: 22px;
-            }
+        .top_img .one {
+            position: relative;
+            width: 20px;
+            height: 18px;
+            left: -2px;
+            top: -1px;
         }
         
-        @media screen and (min-width:1200px) and (max-width: 1500px) {
-            #but1,
-            #but2 {
-                width: 160px;
-            }
-            .row p {
-                width: 670px;
-            }
+        .top {
+            background-color: #fff;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 18px;
+            color: #000;
+            /* margin-bottom: 10px; */
         }
     </style>
 
@@ -156,11 +62,11 @@
 
 <body>
     <div class="container-fluid">
-        <div class="pcimg">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgPc-01.jpg" alt="">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgPc-02.jpg" alt="">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgPc-03.jpg" alt="">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgPc-04.jpg" alt="">
+        <div class="top_img">
+            <img class="one" src="./images/fh.svg" alt="">
+        </div>
+        <div class="top">
+            会议信息
         </div>
         <div class="H5img">
             <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgH5-01.jpg" alt="">
@@ -168,21 +74,15 @@
             <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgH5-03.jpg" alt="">
             <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgH5-04.jpg" alt="">
         </div>
-        <div class="EnglishH5img">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgEH5-01.jpg" alt="">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgEH5-02.jpg" alt="">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgEH5-03.jpg" alt="">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgEH5-04.jpg" alt="">
-        </div>
-        <div class="Englishpcimg">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgEPc-01.jpg" alt="">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgEPc-02.jpg" alt="">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgEPc-03.jpg" alt="">
-            <img src="https://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-event/vis-2019/bgEPc-04.jpg" alt="">
-        </div>
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous "></script>
+<script src="js/config.js"></script>
+<script>
+    $(".top_img").click(function() {
+        window.location.href = changeUrl.imgurl + "/nsi-event/2019Vis-activity/index.html"
+    })
+</script>
 
 </html>
