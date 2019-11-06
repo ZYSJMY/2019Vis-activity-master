@@ -184,7 +184,7 @@
                     }
                 } else {
                     $.message({
-                        message: "请选择一个张门票",
+                        message: "请选择门票",
                         type: 'warning',
                         duration: 2000,
                         showClose: false,
@@ -274,7 +274,7 @@
                     }
                 } else {
                     $.message({
-                        message: "请选择一个张门票",
+                        message: "请选择门票",
                         type: 'warning',
                         duration: 2000,
                         showClose: false,
@@ -371,7 +371,7 @@
                 }
             } else {
                 $.message({
-                    message: "请选择一个张门票",
+                    message: "请选择门票",
                     type: 'warning',
                     duration: 2000,
                     showClose: false,
@@ -449,7 +449,7 @@
                 }
             } else {
                 $.message({
-                    message: "请选择一个张门票",
+                    message: "请选择门票",
                     type: 'warning',
                     duration: 2000,
                     showClose: false,

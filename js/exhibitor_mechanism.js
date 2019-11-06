@@ -15,7 +15,7 @@
 
     $.ajax({
         type: "get",
-        data: { type: "机构", pageNum: "1", pageSize: 30 },
+        data: { type: "机构", pageNum: "1", pageSize: 40 },
         url: changeUrl.address + "/manager/exhibitor/list.do",
         success: function(res) {
             var data = res.data.list

@@ -122,7 +122,7 @@ function loading2() {
             $(".content_main").find(".left_img img").attr('src', res.data.logoIcon) // logo
             $(".content_main").find(".right_text .exhibitorName").html(res.data.exhibitorName) // 公司名称
                 // $(".dianji").find(".zan_num").html(res.data.thumbValue >= 10000 ? (parseInt(res.data.thumbValue / 10000) + "万") : res.data.thumbValue) // 赞数 
-            $(".content_main").find(".right_text .boothNum").html("展位号：" + res.data.boothNum) // 展位
+            $(".content_main").find(".right_text .boothNum").html("展位：" + res.data.boothNum) // 展位
             $(".intro").html(res.data.intro)
             setTimeout(function() {
                 removeLoading('test');
